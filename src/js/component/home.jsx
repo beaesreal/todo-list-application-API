@@ -100,12 +100,12 @@ const Home = () => {
 	// RETORNO FUNC HOME
 
 	return (
-		<div className="col-6 mx-auto text-center bg-white shadow mt-5 rounded pb-5">
+		<div className="col-6 mx-auto bg-white shadow mt-5 rounded pb-5">
 			<div className="row">
 				<h1 className="text-center p-2 mt-4 col">Lista de tareas</h1>
 			</div>
-			<div className="row p-3">
-				<div className="col-9 input-groupp">
+			<div className="row p-5">
+				<div className="col-10  input-groupp">
 					<input
 						className="form-control"
 						type="text"
@@ -113,29 +113,29 @@ const Home = () => {
 						value={tarea}
 						onChange={e => setTarea(e.target.value)}></input>
 				</div>
-				<div className="col-3">
-					<button onClick={agregarTarea} className="btn btn-dark">
-						Añadir Tarea
+				<div className="col-2">
+					<button onClick={agregarTarea} className="btn btn-dark btn-add">
+					<i className="fas fa-solid fa-plus" /> 
 					</button>
 				</div>
-				<div className="col-12 py-5">
-					<ul className="list-group">
+				<div className="col-10 ">
+					<ul className="list-group my-3 ">
 						{listaTareas.map((item, index) => {
 							return (
-								<li key={index} className="list-group-item">
+								<li key={index} className="list-group-item p-1 py-1 px-3">
 									{item.label}
 									<button
 										className="btn"
 										onClick={() => eliminarTareas(index)}>
-										<i className="fas fa-trash-alt" />
+										<i className="fas fa-trash-alt pb-2" />
 									</button>
 								</li>
 							);
 						})}
 					</ul>
 				</div>
-				<div className="col-12 text-left">
-					{listaTareas.length} tarea(s) por hacer
+				<div className="col-10 text-left recuento">
+					<strong>{listaTareas.length}</strong> tarea(s) por hacer
 				</div>
 			</div>
 		</div>
