@@ -1,15 +1,18 @@
+// IMPORTACIONES
+
 import React, { useState, useEffect } from "react";
+
 
 // LISTA DE TAREAS
 
 const Home = () => {
 
-	// LISTA DE TAREAS
+
+	// CONSTANTES
 
 	const [tarea, setTarea] = useState("");
 	const [listaTareas, setlistaTareas] = useState([]);
 
-	
 
 	// AÑADIR TAREA CON ID ÚNICO
 
@@ -22,6 +25,7 @@ const Home = () => {
 	useEffect(() => {
 		traerTarea();
 	}, []);
+
 
 	// ELIMINAR LA TAREA
 
@@ -69,6 +73,7 @@ const Home = () => {
 			.catch(error => console.log("error", error));
 	}
 
+
 	// ENVIAR TAREA
 
 	function enviarTarea() {
@@ -102,9 +107,9 @@ const Home = () => {
 	return (
 		<div className="col-6 mx-auto bg-white shadow mt-5 rounded pb-5">
 			<div className="row">
-				<h1 className="text-center p-2 mt-4 col">Lista de tareas</h1>
+				<h1 className="p-2 my-4 col mx-5">Lista de tareas</h1>
 			</div>
-			<div className="row p-5">
+			<div className="row px-5">
 				<div className="col-10  input-groupp">
 					<input
 						className="form-control"
@@ -115,26 +120,30 @@ const Home = () => {
 				</div>
 				<div className="col-2">
 					<button onClick={agregarTarea} className="btn btn-dark btn-add">
-					<i className="fas fa-solid fa-plus" /> 
+					<i className="fas fa-solid fa-plus" />
 					</button>
 				</div>
 				<div className="col-10 ">
 					<ul className="list-group my-3 ">
+					
 						{listaTareas.map((item, index) => {
 							return (
+								
 								<li key={index} className="list-group-item p-1 py-1 px-3">
 									{item.label}
+								
 									<button
 										className="btn"
 										onClick={() => eliminarTareas(index)}>
 										<i className="fas fa-trash-alt pb-2" />
 									</button>
+									
 								</li>
 							);
 						})}
 					</ul>
 				</div>
-				<div className="col-10 text-left recuento">
+				<div className="col-10 text-left recuento pt-2">
 					<strong>{listaTareas.length}</strong> tarea(s) por hacer
 				</div>
 			</div>

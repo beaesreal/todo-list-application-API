@@ -12,6 +12,7 @@
 */
 body{
     background-color: #E0CFFC;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .btn-add{
@@ -22,4 +23,20 @@ body{
 
 .recuento{
     color: #958ea1;
+}
+
+.fa-trash-alt:hover{
+    color: #C63C3C;
+}
+
+.fa-trash-alt{
+    color: #beb7c9;
+}
+
+a{
+    color: #ae8be7;
+}
+
+a:hover{
+    color: #E0CFFC;
 }
